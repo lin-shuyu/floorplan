@@ -12,7 +12,7 @@ function [] = plotMap(map,currentFloor)
         graphs = fieldnames(fl);
         for l2 = 1:length(graphs)
             temp = fl.(graphs{l2});
-            plot(temp(:,1)+map.dx,temp(:,2)+map.dy,'color',0.9*[1 1 1],'LineWidth',3)
+            plot(temp(:,1),temp(:,2),'color',0.9*[1 1 1],'LineWidth',3)
         end
     end
 
@@ -22,7 +22,7 @@ function [] = plotMap(map,currentFloor)
         graphs = fieldnames(fl);
         for l2 = 1:length(graphs)
             temp = fl.(graphs{l2});
-            plot(temp(:,1)+map.dx,temp(:,2)+map.dy,'color',0.2*[1 1 1],'LineWidth',3)
+            plot(temp(:,1),temp(:,2),'color',0.2*[1 1 1],'LineWidth',3)
         end
     end
     
@@ -30,7 +30,7 @@ function [] = plotMap(map,currentFloor)
     for l1 = 1:size(map.transitions,3)
         for l2 = l1+1:size(map.transitions,3)
             transition = map.transitions;
-            plot(transition(:,1,l1,l2)+map.dx,transition(:,2,l1,l2)+map.dy,'color',[1 0 0],'LineWidth',2)
+            plot(transition(:,1,l1,l2),transition(:,2,l1,l2),'color',[1 0 0],'LineWidth',2)
         end
     end
     
