@@ -1,10 +1,15 @@
-function [] = plotMap(map,currentFloor)
+% Function that plots floor plan.
+
+% map - floor plan data.
+% currentSections - The sections that will be highlighted in the plot.
+
+function [] = plotMap(map,currentSections)
 
     % Extract section names.
     sections = fieldnames(map.sections);
 
     % Define floors except currentFloor.
-    otherFloors = setdiff(1:length(sections),currentFloor);
+    otherFloors = setdiff(1:length(sections),currentSections);
 
     % Make plots of floors except currentFloor.
     for l1 = otherFloors 
@@ -17,12 +22,15 @@ function [] = plotMap(map,currentFloor)
     end
 
     % Make plots of currentFloor.
-    if(~isempty(currentFloor))
-        fl = map.sections.(sections{currentFloor});
-        graphs = fieldnames(fl);
-        for l2 = 1:length(graphs)
-            temp = fl.(graphs{l2});
-            plot(temp(:,1),temp(:,2),'color',0.2*[1 1 1],'LineWidth',3)
+
+    if(~isempty(currentSections))
+        for se = 1:length(currentSections)
+            fl = map.sections.(sections{currentSections(se)});
+            graphs = fieldnames(fl);
+            for l2 = 1:length(graphs)
+                temp = fl.(graphs{l2});
+                plot(temp(:,1),temp(:,2),'color',0.2*[1 1 1],'LineWidth',3)
+            end
         end
     end
     
