@@ -56,6 +56,8 @@ hold on
 plotMap(map,1)
 axis equal
 grid on
+xlabel('X (m)')
+ylabel('Y (m)')
 set(gca, 'FontSize', 24)
 %%%%%%%%%%%%%%%%%%%%
 % Remove variables %
