@@ -41,6 +41,5 @@ function [] = plotMap(map,currentSections)
             plot(transition(:,1,l1,l2),transition(:,2,l1,l2),'color',[1 0 0],'LineWidth',2)
         end
     end
-    
 end
 

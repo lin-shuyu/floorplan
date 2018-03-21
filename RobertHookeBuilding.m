@@ -53,9 +53,10 @@ map.transitions(:,:,3,2) = map.transitions(:,:,2,3);
 
 clf
 hold on
-plotMap(map,1:3)
+plotMap(map,1)
 axis equal
-
+grid on
+set(gca, 'FontSize', 24)
 %%%%%%%%%%%%%%%%%%%%
 % Remove variables %
 %%%%%%%%%%%%%%%%%%%%
